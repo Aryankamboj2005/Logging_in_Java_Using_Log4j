@@ -1,13 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration>
     <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+
+
+        <File name="Logging to file" fileName="log/application.log">
+            <PatternLayout>
+                <Pattern>
+                    %d - %c -[%M] -(%p) -%m -%n
+                </Pattern>
+            </PatternLayout>
+        </File>
+        <!--   in this we told in which format we need
+       the logger to be printed  -->
+        <Console name = "Logging to console" target="SYSTEM_OUT">
+            <PatternLayout>
+                <Pattern>
+                    %d - %c -[%M] -(%p) -%m -%n
+                    <!--
+Pattern Breakdown: %d - %c -[%M] -(%p) -%m -%n
+%d : Date/Time of the log event
+%c : Category (Class Name)
+%M : Method Name (where the log was called)
+%p : Priority/Level (INFO, ERROR, etc.)
+%m : Message (The actual log text)
+%n : Newline (Starts the next log on a fresh line)
+-->
+
+
+                </Pattern>
+            </PatternLayout>
+
         </Console>
+
+        <JDBC>
+
+
+        </JDBC>
+
     </Appenders>
+
+
     <Loggers>
-        <Root level="info">
-            <AppenderRef ref="Console"/>
+<!--     in this we have to specify the package or the class we need to be in the
+            logging -->
+        <Root level = "trace">
+        <!-- this level is used for from this info level all the log are printed  -->
+<!--            root is used to scan the classes in which we have specified the logging-->
+
+            <AppenderRef ref = "Logging to console"/>
+            <AppenderRef ref = "Logging to file"/>
         </Root>
+
     </Loggers>
+
 </Configuration>

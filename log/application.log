@@ -1,0 +1,6 @@
+2026-04-28 19:25:02,904 - com.Aryan.logging4Example -[process] -(TRACE) -tracing the mmessage -
+2026-04-28 19:25:02,906 - com.Aryan.logging4Example -[process] -(DEBUG) -debuged message  -
+2026-04-28 19:25:02,906 - com.Aryan.logging4Example -[process] -(INFO) -from the info part -
+2026-04-28 19:25:02,906 - com.Aryan.logging4Example -[process] -(WARN) -from the warn part -
+2026-04-28 19:25:02,906 - com.Aryan.logging4Example -[process] -(ERROR) -from the error part -
+2026-04-28 19:25:02,906 - com.Aryan.logging4Example -[process] -(FATAL) -from teh fattal method -
